@@ -1,3 +1,4 @@
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,8 +27,20 @@ namespace Health_Checks
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddCors();
+
+            services.AddHealthChecks()
+                .AddCheck<CustomHealthChecks>("Health Checks customizavel");
+
+            services.AddHealthChecksUI(options =>
+            {
+                options.SetEvaluationTimeInSeconds(5);
+                options.MaximumHistoryEntriesPerEndpoint(10);
+                options.AddHealthCheckEndpoint("API com Health Checks", "/health");
+            })
+            .AddInMemoryStorage();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Health_Checks", Version = "v1" });
@@ -54,6 +67,14 @@ namespace Health_Checks
             {
                 endpoints.MapControllers();
             });
+
+            app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+            {
+                Predicate = p => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
+
+            app.UseHealthChecksUI(options => { options.UIPath = "/dashboard"; });
         }
     }
 }
