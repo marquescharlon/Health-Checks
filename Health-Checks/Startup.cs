@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.InkML;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
