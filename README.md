@@ -1,12 +1,12 @@
 # Health-Checks
 
-Com o surgimento dos microsserviços a tarefa de verificar se a aplicação está funcionando ou não passou a ser cada vez mais indispensável. Antes utilizava-se muito criar um endpoint que retornava um **statusCode**, isso dizia se a aplicação estava OK ou não. 
+Com o surgimento dos microsserviços a tarefa de verificar se a aplicação está funcionando ou não passou a ser cada vez mais indispensável. Antes utilizava-se muito criar um endpoint que retornava um **statusCode**, isso dizia se a aplicação estava OK ou não. Porém, passamos a ter como middleware no ASP.NET Core, lembrando que é a partir da versão 2.2. Nessa aplicação utilizei uma API para teste disponiiblizada no endereço https://jsonplaceholder.typicode.com/users
 
-Porém, passamos a ter como middleware no ASP.NET Core, mas lembrando a partir da versão 2.2 que fornece um endpoint configurável.
+Você pode baixar esse repositório, mas se quiser criar o seu próprio Health-Checks vou lhe mostrar em alguns passos.
 
-Nessa aplicação utilizei uma API para teste disponiiblizada no endereço https://jsonplaceholder.typicode.com/users
+**Esse será o resultado:**
 
-Então, você pode baixar esse repositório, mas se quiser criar o seu próprio Health-Checks vou lhe mostrar em alguns passos.
+![image](https://user-images.githubusercontent.com/22162514/188295669-721792c2-3691-4510-8e3a-f0ecf4640a67.png)
 
 ## 1. Criar aplicação
 
@@ -141,8 +141,6 @@ Irá poder testar a API através do Swagger:
 
 E para acessar a aplicação experimente o caminho: https://localhost:44308/dashboard
 
-![image](https://user-images.githubusercontent.com/22162514/188295669-721792c2-3691-4510-8e3a-f0ecf4640a67.png)
-
 ## Conclusão
 
-No trabalho a gente consome algumas APIs e direto somos questionados se está funcionando ou não, até já desenvolveram uma vez uma aplicação. Porém, para fins didáticos e a título de curiosidade quis desenvolver um, porém, consumindo uma API gratuita para poder compartilhar e permitir que o diretório fique público. Portanto, este repositório ainda poderá sofrer alterações.
+No trabalho a gente consome algumas APIs e direto somos questionados se está funcionando ou não, até já desenvolveram uma vez uma aplicação para realizar essa consulta. Para fins didáticos e a título de curiosidade quis desenvolver um, porém, consumindo uma API gratuita para poder compartilhar e permitir que o diretório fique público. Este repositório ainda poderá sofrer alterações.
