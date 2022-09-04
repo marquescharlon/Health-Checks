@@ -1,7 +1,11 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using System;
+using System.Net;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +22,6 @@ namespace Health_Checks
 
             //var users = JsonConvert.DeserializeObject<>(content);
 
-            
             if (content == "" || content == null)
                 return await Task.FromResult(new HealthCheckResult(
                 status: HealthStatus.Unhealthy,
@@ -30,11 +33,29 @@ namespace Health_Checks
                 description: "API está funcionando"
             ));
 
+            //try
+            //{
+            //    // Creates an HttpWebRequest for the specified URL.
+            //    HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("https://jsonplaceholder.typicode.com");
+            //    // Sends the HttpWebRequest and waits for a response.
+            //    HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
 
-            //return await Task.FromResult(new HealthCheckResult(
-            //    status: HealthStatus.Healthy,
-            //    description: "API está doente"
-            //));
+            //    if (myHttpWebResponse.StatusCode == HttpStatusCode.OK)
+            //    {
+            //        return await Task.FromResult(new HealthCheckResult(
+            //        status: HealthStatus.Healthy,
+            //        description: "API está funcionando"));
+            //    }
+            //    // Releases the resources of the response.
+            //    myHttpWebResponse.Close();
+            //}
+
+            //catch (WebException e)
+            //{
+            //    return await Task.FromResult(new HealthCheckResult(
+            //    status: HealthStatus.Unhealthy,
+            //    description: "API está doente"));
+            //}
         }
     }
 }

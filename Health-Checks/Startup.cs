@@ -67,6 +67,8 @@ namespace Health_Checks
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                
+
             });
 
             app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
