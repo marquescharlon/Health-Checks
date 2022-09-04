@@ -1,8 +1,5 @@
 # Health-Checks
 
-<<<<<<< HEAD
-Com o surgimento dos microsservi�os a tarefa de verificar se a aplica��o est� funcionando ou n�o passou a ser cada vez mais indispens�vel. Antes utilizava-se muito criar um endpoint que retornava um statusCode 200, informando que a aplica��o est� OK. 
-=======
 Com o surgimento dos microsserviços a tarefa de verificar se a aplicação está funcionando ou não passou a ser cada vez mais indispensável. Antes utilizava-se muito criar um endpoint que retornava um **statusCode**, isso dizia se a aplicação estava OK ou não. Porém, passamos a ter como middleware no ASP.NET Core, lembrando que é a partir da versão 2.2. Nessa aplicação utilizei uma API para teste disponiiblizada no endereço https://jsonplaceholder.typicode.com/users
 
 Você pode baixar esse repositório, mas se quiser criar o seu próprio Health-Checks vou lhe mostrar em alguns passos.
@@ -147,4 +144,3 @@ E para acessar a aplicação experimente o caminho: https://localhost:44308/dash
 ## Conclusão
 
 No trabalho a gente consome algumas APIs e direto somos questionados se está funcionando ou não, até já desenvolveram uma vez uma aplicação para realizar essa consulta. Para fins didáticos e a título de curiosidade quis desenvolver um, porém, consumindo uma API gratuita para poder compartilhar e permitir que o diretório fique público. Este repositório ainda poderá sofrer alterações.
->>>>>>> 479b3158ca80a31d9c8d7279245452d5c1c2160e
