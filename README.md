@@ -85,7 +85,7 @@ public void ConfigureServices(IServiceCollection services)
       options.SetEvaluationTimeInSeconds(5); // Intervalo com que será verificado a aplicação
       options.MaximumHistoryEntriesPerEndpoint(10); // Quantidade máxima registrada no histórico
       
-      // Você pode definir o endpoint conforme sua necessidade, neste respositório estamos usando "/health"
+      // Você pode definir o endpoint conforme sua necessidade
       options.AddHealthCheckEndpoint("API com Health Checks", "/health"); // Define o endpoint
   })
   .AddInMemoryStorage();
