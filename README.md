@@ -59,7 +59,7 @@ public void Configure(IApplicationBuilder  app, IWebHostEnvironment  env)
  }
 ```
 
-## 4. Vamos utilizar uma interface gráfica
+## 4. Utilizar uma interface gráfica
 Com essa visão seremos capazes de visualizar informações como histórico, porém, para configurar vamos instalar alguns pacotes necessários:
 
 ```
